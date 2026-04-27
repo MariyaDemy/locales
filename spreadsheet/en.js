@@ -99,8 +99,17 @@ export default {
 		"range-remove-confirm": "Are you sure you want to remove the range permanently?",
 		"sheet-remove-confirm": "Are you sure you want to remove the sheet permanently?",
 		"merge-cell-confirm":"Only the left top value will remain after merging. Continue?",
+		"error-merge-multiselect": "The merge cells feature is available if only one area is selected",
+		"error-sort-multiselect": "Sorting is available if only one area is selected",
+		"error-autofill-multiselect": "Autofill is available if only one area is selected",
+		"error-clipboard-multiselect": "Clipboard operations are available if only one area is selected",
+		"error-filter-multiselect": "Creating and removing filters are available if only one area is selected",
+		"error-group-multiselect": "Grouping and ungrouping are available if only one area is selected",
 		"error-range": "The range is incorrect!",
 		"error-link": "The link is incorrect!",
+		// groups
+		"group": "Group",
+		"ungroup": "Ungroup",
 		//print
 		"print":"Print",
 		"print-title":"Before you print..",
@@ -234,6 +243,7 @@ export default {
 		"validation-error-message-text": "Invalid data",
 		"validation-error-save": "Save",
 		"validation-error-restore": "Restore",
+
 		//find and replace
 		"find-replace-title": "Find and Replace",
 		"find-title": "Find",
@@ -254,7 +264,32 @@ export default {
 		"replace-all": "Replace all",
 		"replace": "Replace",
 		"find-all": "Find all",
-		"find-next": "Find next"
+		"find-next": "Find next",
+
+		//sheet rename
+		"sheet-rename-name-exists": "This name is already in use, please choose another one",
+		"sheet-rename-invalid-name": "An invalid name was entered for the sheet",
+		"sheet-rename-no-blank": "The sheet name cannot be blank",
+		"sheet-rename-name-length": "The sheet name cannot exceed 31 characters",
+		"sheet-rename-invalid-characters": "The sheet name cannot contain any of the following characters: : \\ / ? * [ or ]",
+
+		//stats
+		"sum": "Sum",
+		"average": "Average",
+		"min": "Min",
+		"max": "Max",
+		"count": "Numerical Count",
+		"counta": "Count",
+
+		// custom sort dialog
+		"sort-data-headers": "Data has headers",
+		"sort-by": "Sort by",
+		"sort-by-next": "next by",
+		"sort-dir-asc": "A > Z",
+		"sort-dir-desc": "Z > A",
+		"add-sort-column": "Add one more column",
+		"sort-merge-error": "Cannot sort a range that partially contains merged cells",
+		"sort-radio-error": "Cannot sort a range that partially overlaps a radio button group",
 	},
 	tooltips: {
 		// "font" block
@@ -284,13 +319,11 @@ export default {
 		"hide-sheet": "Hide sheet",
 
 		"new": "New",
-		"common": "common",
-		"text": "text",
 		"graph": "Graph",
 		"image": "Image",
 		"data": "Data",
 		"sort": "Sort",
-		
+
 		// "copy-paste" context menu
 		"cut": "Cut",
 		"copy": "Copy",
@@ -301,6 +334,7 @@ export default {
 		"paste-styles": "Styles",
 		"paste-conditions": "Conditional formats",
 		"paste-validation": "Validation",
+		"paste-transpose": "Paste transposed"
 	},
 	actions: {
 		// "file" block
@@ -343,6 +377,9 @@ export default {
 		// "number" block
 		"number": "Number",
 		"format": "Number format",
+		"price": "Currency",
+		"int": "Number",
+		"custom": "Custom",
 		"format-common": "Common",
 		"format-price": "Currency",
 		"format-int": "Number",
@@ -353,9 +390,14 @@ export default {
 		"increase-decimals":"Increase decimal places",
 		"decrease-decimals":"Decrease decimal places",
 		// "edit" block
-		"edit": "Edit",	
-		"sort-asc": "Sort A to Z",
-		"sort-desc": "Sort Z to A",
+		"edit": "Edit",
+		"sort-range": "Sort Range",
+		"sort-asc": "Ascending (A to Z)",
+		"sort-desc": "Descending (Z to A)",
+		"sort-custom": "Custom Sort",
+		"sort-sheet": "Sort Sheet",
+		"sort-sheet-asc": "Sort Sheet by Column #columnName#, A to Z",
+		"sort-sheet-desc": "Sort Sheet by Column #columnName#, Z to A",
 		"create-filter": "Create/remove filters",
 		"add-range": "Named ranges",
 		"conditional-format": "Conditional format",
@@ -397,6 +439,8 @@ export default {
 		"show-row": "Show row",
 		"hide-row": "Hide row",
 		"resize-row": "Resize row",
+		"group-row": "Group row",
+		"ungroup-row": "Ungroup row",
 		"format-row":"Row format",
 		"column": "Columns",
 		"add-column": "Insert column",
@@ -404,6 +448,8 @@ export default {
 		"show-column": "Show column",
 		"hide-column": "Hide column",
 		"resize-column": "Resize column",
+		"group-column": "Group column",
+		"ungroup-column": "Ungroup column",
 		"format-column":"Column format",
 		"hide-gridlines": "Hide/show gridlines",
 		"hide-headers": "Hide/show headers",
@@ -418,7 +464,8 @@ export default {
 		"math-error":"#ERROR!",
 		"math-ref-error":"#REF!",
 		"format-error":"INCORRECT FORMAT",
-		"math-xss-error": "#XSS!"
+		"math-xss-error": "#XSS!",
+		"math-spill-error": "#SPILL!"
 	},
 	liveEditor:{
 		"edit":"Edit:",
