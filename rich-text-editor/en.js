@@ -34,11 +34,15 @@ export default {
 	Export: "Export",
 	PDF: "PDF",
 	DOCX: "DOCX",
+	MD: "MD",
+	TXT: "TXT",
 	"Print...": "Print...",
 	Edit: "Edit",
 	Cut: "Cut",
 	Copy: "Copy",
+	"Copy as Markdown": "Copy as Markdown",
 	Paste: "Paste",
+	"Paste as Markdown": "Paste as Markdown",
 	View: "View",
 	Fullscreen: "Fullscreen",
 	"Layout mode": "Layout mode",
@@ -85,8 +89,8 @@ export default {
 	"Enter text to display": "Enter text to display",
 	"Paste link": "Paste link",
 	"Link copied to clipboard": "Link copied to clipboard",
-	"The operation failed! Please check your browser's clipboard permissions.":
-		"The operation failed! Please check your browser's clipboard permissions.",
+	"Clipboard access was blocked. This may be due to browser permissions or a restricted environment (e.g. iframe).":
+		"Clipboard access was blocked. This may be due to browser permissions or a restricted environment (e.g. iframe).",
 	"Horizontal line": "Horizontal line",
 	Search: "Search",
 	"Smileys & People": "Smileys & People",
@@ -110,4 +114,5 @@ export default {
 	"New line": "New line",
 	Action: "Action",
 	Hotkey: "Hotkey",
+	"Select all": "Select all",
 };

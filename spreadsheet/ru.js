@@ -97,8 +97,17 @@ export default {
 		"range-remove-confirm": "Эту операцию нельзя отменить. Вы уверены?",
 		"sheet-remove-confirm": "Эту операцию нельзя отменить. Вы уверены?",
 		"merge-cell-confirm":"После объединения останется только верхнее левое значение. Продолжить?",
+		"error-merge-multiselect": "Объединение ячеек доступно, если выбрана только одна область",
+		"error-sort-multiselect": "Сортировка доступна, если выбрана только одна область",
+		"error-autofill-multiselect": "Автозаполнение доступно, если выбрана только одна область",
+		"error-clipboard-multiselect": "Операции с буфером обмена доступны, если выбрана только одна область",
+		"error-filter-multiselect": "Добавление и удаление фильтров доступно, если выбрана только одна область",
+		"error-group-multiselect": "Группировка и разгруппировка доступна, если выбрана только одна область",
 		"error-range": "Неверный диапазон!",
 		"error-link": "Неверная ссылка!",
+		// groups
+		"group": "Группировать",
+		"ungroup": "Разгруппировать",
 		//print
 		"print":"Распечатать",
 		"print-title":"Перед печатью..",
@@ -232,6 +241,8 @@ export default {
 		"validation-error-message-text": "Неверные данные!",
 		"validation-error-save": "Сохранить",
 		"validation-error-restore": "Восстановить",
+
+		//find and replace
 		"find-replace-title": "Найти и Заменить",
 		"find-title": "Найти",
 		"find-what": "Найти:",
@@ -251,7 +262,32 @@ export default {
 		"replace-all": "Заменить все",
 		"replace": "Заменить",
 		"find-all": "Найти все",
-		"find-next": "Найти далее"
+		"find-next": "Найти далее",
+
+		//sheet rename
+		"sheet-rename-name-exists": "Это имя уже используется, укажите другое",
+		"sheet-rename-invalid-name": "Введено недопустимое имя для листа",
+		"sheet-rename-no-blank": "Имя листа не может быть пустым",
+		"sheet-rename-name-length": "Имя листа не может превышать 31 символ",
+		"sheet-rename-invalid-characters": "Имя листа не может содержать следующие символы: : \\ / ? * [ или ]",
+
+		//stats
+		"sum": "Сумма",
+		"average": "Среднее",
+		"min": "Минимум",
+		"max": "Максимум",
+		"count": "Количество чисел",
+		"counta": "Количество",
+
+		// custom sort dialog
+		"sort-data-headers": "В данных есть заголовок",
+		"sort-by": "Сначала по",
+		"sort-by-next": "затем по",
+		"sort-dir-asc": "А > Я",
+		"sort-dir-desc": "Я > А",
+		"add-sort-column": "Добавить еще колонку",
+		"sort-merge-error": "Невозможно отсортировать диапазон частично заполненный объединёнными ячейками",
+		"sort-radio-error": "Невозможно отсортировать диапазон, частично пересекающий группу радиокнопок",
 	},
 	tooltips: {
 		// "font" block
@@ -298,6 +334,7 @@ export default {
 		"paste-styles": "Стили",
 		"paste-conditions": "Условное форматирование",
 		"paste-validation": "Проверка данных",
+		"paste-transposed": "Вставить транспонированную"
 	},
 	actions: {
 		// "file" block
@@ -344,6 +381,9 @@ export default {
 		// "number" block
 		"number": "Число",
 		"format": "Выбрать числовой формат",
+		"price": "Валюта",
+		"int": "Число",
+		"custom": "Свой формат",
 		"format-common": "Общий",
 		"format-price": "Валюта",
 		"format-int": "Число",
@@ -356,8 +396,13 @@ export default {
 
 		// "edit" block
 		"edit": "Редактирование",
-		"sort-asc": "Сортировка от А до Я",
-		"sort-desc": "Сортировка от Я до А",
+		"sort-range": "Сортировка области",
+		"sort-asc": "По возрастанию (от А до Я)",
+		"sort-desc": "По убыванию (от Я до А)",
+		"sort-custom": "Настроить сортировку",
+		"sort-sheet": "Сортировать лист",
+		"sort-sheet-asc": "Сортировать лист по колонке #columnName#, от А до Я",
+		"sort-sheet-desc": "Сортировать лист по колонке #columnName#, от Я до А",
 		"create-filter": "Создать/удалить фильтры",
 		"add-range": "Именованные диапазоны",
 		"conditional-format": "Условное форматирование",
@@ -401,6 +446,8 @@ export default {
 		"show-row": "Показать строку",
 		"hide-row": "Спрятать строку",
 		"resize-row": "Изменить высоту",
+		"group-row": "Группировать строку",
+		"ungroup-row": "Разгруппировать строку",
 		"format-row":"Формат строки",
 		"column": "Столбцы",
 		"add-column": "Вставить столбец",
@@ -408,6 +455,8 @@ export default {
 		"show-column": "Показать столбец",
 		"hide-column": "Спрятать столбец",
 		"resize-column": "Изменить ширину",
+		"group-column": "Группировать столбец",
+		"ungroup-column": "Разгруппировать столбец",
 		"format-column":"Формат столбца",
 		"hide-gridlines": "Спрятать/показать сетку",
 		"hide-headers": "Спрятать/показать заголовки",
@@ -424,7 +473,8 @@ export default {
 		"math-error":"#ОШИБКА!",
 		"math-ref-error":"#ССЫЛКА!",
 		"format-error":"ОШИБКА В ФОРМАТЕ",
-		"math-xss-error": "XSS уязвимость!"
+		"math-xss-error": "XSS уязвимость!",
+		"math-spill-error": "#ПЕРЕНОС!"
 	},
 	liveEditor:{
 		"edit":"Правка:",
